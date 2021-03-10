@@ -5,7 +5,7 @@ from core import models
 
 
 def sample_user(email='test@example.com',
-                username='Abbas',
+                username='BabrAli',
                 password='Testpassword'):
     """Create a sample user"""
     return get_user_model().objects.create_user(username, email, password)
@@ -49,3 +49,19 @@ class ModelTest(TestCase):
 
         self.assertTrue(user.is_superuser)
         self.assertTrue(user.is_staff)
+
+    def test_author_str(self):
+        """Test author string name"""
+        author = models.Author.objects.create(
+            name='Friedrich',
+            last_name='Nietzsche',
+            about='He was cool.',
+            profile=None,
+            date_of_birth=None,
+            date_of_death=None
+        )
+        tmp = f"{author.name} {author.last_name}"
+        self.assertEqual(tmp, str(author))
+
+
+# TODO: do tests for imagefield and dates

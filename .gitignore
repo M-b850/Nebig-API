@@ -130,3 +130,6 @@ dmypy.json
 
 # VS code
 .vscode/
+.idea/
+TODO.txt
+.DS_Store
