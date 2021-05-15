@@ -26,7 +26,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'books.apps.BooksConfig' #books app
+    'rest_framework.authtoken',
+    'user.apps.UserConfig',
+    'core.apps.CoreConfig',
 ]
 
 MIDDLEWARE = [
@@ -109,5 +111,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+AUTH_USER_MODEL = 'core.User'
 # read this when you're deploying the project
 # https://docs.djangoproject.com/en/3.1/howto/static-files/deployment/
